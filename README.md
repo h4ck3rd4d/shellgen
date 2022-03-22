@@ -1,6 +1,6 @@
 # Shellgen.py 
 
-## The idea for this is project is for some practice python, as well as to make a useful tool for pentesting / CTF's
+## The idea for this project is for some practice python, as well as to make a useful tool for pentesting / CTF's
 
 ## The tool is used to generate various types of reverse shell commands from the CLI.
 
