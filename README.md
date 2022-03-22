@@ -22,6 +22,7 @@
 ## Samples 
 - basic usage uses the three default methods, bash python3, and nc and default port l337
 
+    
     python3 shellgen.py 127.0.0.1
 
     ['bash', 'python3', 'nc']
