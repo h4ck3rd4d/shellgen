@@ -15,9 +15,8 @@ asciiart = """
  `-----'  `--' `--'  `------'  `-----'   `-----'   `-----'    `------' `--'  `--'
 
 """
-asciiart = base64.b64encode(bytes(asciiart, 'utf-8'))
-
-parser = argparse.ArgumentParser(description = base64.b64decode(asciiart).decode('utf-8'))
+print(asciiart)
+parser = argparse.ArgumentParser()
 parser.add_argument('-i', metavar='<attacker ip>', help='Attacker ip address to receive the connection back from victim machine. Default = 127.0.0.1',default='127.0.0.1')
 parser.add_argument('-p', metavar='<attacker port>', help='Attacker port to listen on. Default = 1337', default='1337')
 parser.add_argument('-m', metavar='method to use', default='bash,python3,nc', help='A comma seperated list of reverse shell methods. Default is bash,python3,nc ')
